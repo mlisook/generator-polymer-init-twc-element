@@ -1,0 +1,22 @@
+{
+    "name": "<%= name %>",
+    "version": "1.0.0",
+    "description": "<%= description %>",
+    "main": "index.html",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+      "polymer",
+      "custom element",
+      "typescript",
+      "twc"
+    ],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "potts": "^1.2.1",
+      "twc": "^0.4.2-rc",
+      "typescript": "^2.4.2"
+    }
+  }
