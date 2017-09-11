@@ -26,32 +26,33 @@
     </test-fixture>
 
     <script>
-      suite('<%= name %>', function() {
+      suite('<%= name %> property tests', () => {
 
-        test('instantiating the element with default properties works', function() {
-          var element = fixture('BasicTestFixture');
+        test('instantiating the element with default properties works', () => {
+          const element = fixture('BasicTestFixture');
           assert.equal(element.aSampleProperty, 'an initial value');
-          var elementShadowRoot = element.shadowRoot;
-          var elementHeader = elementShadowRoot.querySelector('h2');
+          const elementShadowRoot = element.shadowRoot;
+          const elementHeader = elementShadowRoot.querySelector('h2');
           assert.equal(elementHeader.innerHTML, 'an initial value');
         });
 
-        test('setting a property on the element works', function() {
+        test('setting a property by attribute works', () => {
           // Create a test fixture
-          var element = fixture('ChangedPropertyTestFixture');
+          const element = fixture('ChangedPropertyTestFixture');
           assert.equal(element.aSampleProperty, 'foo');
-          var elementShadowRoot = element.shadowRoot;
-          var elementHeader = elementShadowRoot.querySelector('h2');
+          const elementShadowRoot = element.shadowRoot;
+          const elementHeader = elementShadowRoot.querySelector('h2');
           assert.equal(elementHeader.innerHTML, 'foo');
         });
 
-        test('the computed property on the element works', function() {
+        test('computed property works', () => {
           // Create a test fixture
-          var element = fixture('ChangedPropertyTestFixture');
+          const element = fixture('ChangedPropertyTestFixture');
           assert.equal(element.fooStatus, true);
-          element.aSampleProperty="not foo";
+          element.aSampleProperty = "not foo";
           assert.equal(element.fooStatus, false);
         });
+
       });
     </script>
 
