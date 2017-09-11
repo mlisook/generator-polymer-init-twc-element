@@ -17,6 +17,7 @@
     "devDependencies": {
       "potts": "^1.2.1",
       "twc": "^0.4.2-rc",
-      "typescript": "^2.4.2"
+      "typescript": "^2.4.2",
+      "@types/mocha": "^2.2.43"
     }
   }

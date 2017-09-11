@@ -5,14 +5,16 @@ import { attr, compute, notify, observe, style, template } from 'twc/polymer';
 /**
  * `<%= name %>` 
  * <%= description %>
+ * <%= templateLocation %>
  *
  * @customElement
  * @polymer 
  * @demo demo/index.html
  */
 @CustomElement()
-@template('<%= name %>.template.html')
-class <%= elementClassName %> extends Polymer.Element {
+<% if (templateLocation == 'inHTML') { %>@template('<%= name %>.template.html')
+<% } %><% if (templateLocation == 'atTemplate') { %>@template(`<%- templateText %>`)
+<% } %>export default class <%= elementClassName %> extends Polymer.Element {
   /**
    * A sample property
    */
@@ -23,7 +25,11 @@ class <%= elementClassName %> extends Polymer.Element {
    * attribute and notify.
    */
   @compute((aSampleProperty: string) => { return aSampleProperty == "foo"; }) @attr() @notify() fooStatus: boolean;
-
+  <% if (templateLocation == 'templateFn') { %>
+  template() {
+      return `<%- templateText %>`;
+  }
+  <% } %>
   connectedCallback(): void {
       super.connectedCallback();
       // do more stuff
