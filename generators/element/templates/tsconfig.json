@@ -58,7 +58,8 @@
     "watch": true
     },
     "include": [
-     "node_modules/twc/types/polymer.decorators.d.ts",
+     "node_modules/twc/decorators/polymer.d.ts",
+     "node_modules/polymer2-types/*.d.ts",
      "./*.ts",
      "test/**/*.ts",
      "demo/**/*.ts"

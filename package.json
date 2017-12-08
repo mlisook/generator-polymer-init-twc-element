@@ -1,6 +1,6 @@
 {
   "name": "generator-polymer-init-twc-element",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Polymer 2 element in Typescript using TWC",
   "main": "index.js",
   "repository": {
@@ -27,8 +27,8 @@
     "generators/element"
   ],
   "devDependencies": {
-    "twc": "^0.4.2-rc",
-    "typescript": "^2.5.2"
+    "twc": "^0.5.2",
+    "typescript": "^2.6.2"
   },
   "dependencies": {
     "@types/chalk": "^0.4.31",
